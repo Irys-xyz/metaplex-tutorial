@@ -1,0 +1,20 @@
+# Next.js build output
+.next
+out
+
+# Node.js modules
+node_modules
+
+# Environment variables
+.env
+.env.local
+
+# Editor files and directories
+.vscode
+.idea
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,14 @@
+{
+  "name": "Space Llamas #3",
+  "symbol": "SPL",
+  "description": "These llamas are going to the moon",
+  "image": "2.png",
+  "properties": {
+    "files": [
+      {
+        "uri": "2.png",
+        "type": "image/png"
+      }
+    ]
+  }
+}
