@@ -4,6 +4,7 @@ out
 
 # Node.js modules
 node_modules
+mint-storefront/node_modules
 
 # Environment variables
 .env
