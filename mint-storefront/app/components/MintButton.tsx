@@ -34,16 +34,7 @@ const MintButton: React.FC<MintButtonProps> = ({ setMessage }) => {
 	const wallet = useWallet();
 	const [isLoading, setIsLoading] = useState(false);
 
-	const mintNFT = async () => {
-		setIsLoading(true);
-		try {
-			await doMint(wallet);
-			setMessage("NFT minted, check your wallet!");
-		} catch (e) {
-			setMessage("Error minting NFT: " + e);
-		}
-		setIsLoading(false);
-	};
+	const mintNFT = async () => {};
 
 	return (
 		<button

@@ -11,13 +11,9 @@ import { loadNFTs } from "../utils/loadNFTs";
 const NFTs: React.FC<{ message: string }> = ({ message }) => {
 	const [nftMetadata, setNftMetadata] = useState<string[]>([]);
 
-	useEffect(() => {
-		doLoadNFTs();
-	}, []);
+	useEffect(() => {}, []);
 
-	const doLoadNFTs = async () => {
-		setNftMetadata(await loadNFTs());
-	};
+	const doLoadNFTs = async () => {};
 
 	return (
 		<div className="flex flex-wrap justify-center mt-10 bg-gradient-to-b from-darkest to-light bg-fixed">
