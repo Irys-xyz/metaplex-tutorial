@@ -13,10 +13,10 @@ NAME=$3
 SYMBOL=$4
 DESCRIPTION=$5
 
-# Check if the specified folder exists
+# Check if the specified folder exists, if not, create it
 if [ ! -d "$FOLDER_PATH" ]; then
-	echo "The folder $FOLDER_PATH does not exist."
-	exit 1
+	echo "The folder $FOLDER_PATH does not exist. Creating it now..."
+	mkdir -p "$FOLDER_PATH"
 fi
 
 # Create the originals subfolder
@@ -71,8 +71,14 @@ for FILE in $FILES; do
 	fi
 
 	# Create JSON file
+	if [ "$FILE_NAME" != "collection" ]; then
+		JSON_NAME="$NAME #$((COUNTER + 1))"
+	else
+		JSON_NAME="$NAME"
+	fi
+
 	echo "{
-  \"name\": \"$NAME #$((COUNTER + 1))\",
+  \"name\": \"$JSON_NAME\",
   \"symbol\": \"$SYMBOL\",
   \"description\": \"$DESCRIPTION\",
   \"image\": \"$FILE_NAME.$FILE_EXTENSION\",
