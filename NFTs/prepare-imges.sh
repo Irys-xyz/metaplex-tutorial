@@ -13,10 +13,10 @@ NAME=$3
 SYMBOL=$4
 DESCRIPTION=$5
 
-# Check if the specified folder exists, if not, create it
+# Check if the specified folder exists
 if [ ! -d "$FOLDER_PATH" ]; then
-	echo "The folder $FOLDER_PATH does not exist. Creating it now..."
-	mkdir -p "$FOLDER_PATH"
+	echo "The folder $FOLDER_PATH does not exist."
+	exit 1
 fi
 
 # Create the originals subfolder
