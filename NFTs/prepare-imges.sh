@@ -20,7 +20,7 @@ if [ ! -d "$FOLDER_PATH" ]; then
 fi
 
 # Create the originals subfolder
-mkdir -p "$FOLDER_PATH/originals"
+mkdir -p "./originals"
 
 # Check if the file extension is either png or jpg
 if [ "$FILE_EXTENSION" != "png" ] && [ "$FILE_EXTENSION" != "jpg" ]; then
@@ -56,7 +56,7 @@ for FILE in $FILES; do
 	FILE_NAME="${FILE_NAME%.*}"
 
 	# Copy the file to the originals subfolder
-	cp "$FILE" "$FOLDER_PATH/originals"
+	cp "$FILE" "./originals"
 
 	# Check if the file is named "collection"
 	if [ "$FILE_NAME" != "collection" ]; then
