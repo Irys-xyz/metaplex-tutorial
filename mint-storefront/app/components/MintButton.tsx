@@ -30,11 +30,20 @@ interface MintButtonProps {
 	setMessage: (message: string) => void;
 }
 
-const MintButton: React.FC<MintButtonProps> = ({ setMessage }) => {
+interface MintButtonProps {
+	setMessage: (message: string) => void;
+	setShowConfetti: (showConfetti: boolean) => void;
+}
+
+
+const MintButton: React.FC<MintButtonProps> = ({ setMessage, setShowConfetti }) => {
 	const wallet = useWallet();
 	const [isLoading, setIsLoading] = useState(false);
 
-	const mintNFT = async () => {};
+	const mintNFT = async () => {
+
+		
+	};
 
 	return (
 		<button
