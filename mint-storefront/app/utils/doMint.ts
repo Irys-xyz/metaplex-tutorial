@@ -12,4 +12,7 @@ import { WalletAdapter } from "@solana/wallet-adapter-base";
 /**
  * Mints a random NFT from the colletion owned by the
  */
-export const doMint = async (wallet: WalletAdapter) => {};
+export const doMint = async (wallet: WalletAdapter) => {
+
+  
+};
