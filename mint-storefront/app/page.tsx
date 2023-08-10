@@ -11,7 +11,8 @@ import { WalletModalProvider } from "@solana/wallet-adapter-react-ui";
 import { clusterApiUrl } from "@solana/web3.js";
 
 export default function Home() {
-	const [message, setMessage] = useState<string>();
+	const [message, setMessage] = useState<string>("");
+	const [showConfetti, setShowConfetti] = useState(false);
 
 	// The network can be set to 'devnet', 'testnet', or 'mainnet-beta'
 	const network = WalletAdapterNetwork.Devnet;
@@ -43,8 +44,8 @@ export default function Home() {
 			<ConnectionProvider endpoint={endpoint}>
 				<WalletProvider wallets={wallets} autoConnect>
 					<WalletModalProvider>
-						<Navbar setMessage={setMessage} />
-						<NFTs message={message} />
+						<Navbar setMessage={setMessage} setShowConfetti={setShowConfetti} />
+						<NFTs message={message} showConfetti={showConfetti} setShowConfetti={setShowConfetti} />
 					</WalletModalProvider>
 				</WalletProvider>
 			</ConnectionProvider>
