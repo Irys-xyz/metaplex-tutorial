@@ -22,7 +22,12 @@ const ClientSideWalletMultiButton = (props) => {
 	return <WalletMultiButton {...props} />;
 };
 
-export const Navbar = ({ setMessage }: { setMessage: (message: string) => void }) => {
+interface NavbarProps {
+	setMessage: (message: string) => void;
+	setShowConfetti: (showConfetti: boolean) => void;
+}
+
+export const Navbar = ({ setMessage, setShowConfetti }) => {
 	return (
 		<header className="w-full fixed top-0 z-50 bg-normal text-text shadow-xl">
 			<nav className="container mx-auto">
