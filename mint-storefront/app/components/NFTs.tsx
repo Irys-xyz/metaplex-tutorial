@@ -7,16 +7,40 @@ import { mplCandyMachine } from "@metaplex-foundation/mpl-candy-machine";
 import { publicKey } from "@metaplex-foundation/umi";
 import { fetchCandyMachine, fetchCandyGuard } from "@metaplex-foundation/mpl-candy-machine";
 import { loadNFTs } from "../utils/loadNFTs";
+import Confetti from "react-confetti";
 
-const NFTs: React.FC<{ message: string }> = ({ message }) => {
+interface NFTsProps {
+	message: string;
+	showConfetti: boolean;
+	setShowConfetti: (show: boolean) => void;
+}
+
+const NFTs: React.FC<{ message: string }> = ({ message, showConfetti, setShowConfetti }) => {
 	const [nftMetadata, setNftMetadata] = useState<string[]>([]);
 
-	useEffect(() => {}, []);
+	useEffect(() => {
+		
+	}, []);
 
-	const doLoadNFTs = async () => {};
+	const doLoadNFTs = async () => {
+		
+	};
+
+	// Hook used to stop the confetti after 7 seconds
+	useEffect(() => {
+		if (showConfetti) {
+			const timer = setTimeout(() => {
+				setShowConfetti(false);
+			}, 7000); // stops after 7 seconds
+
+			// Cleanup the timer if the component unmounts
+			return () => clearTimeout(timer);
+		}
+	}, [showConfetti]);
 
 	return (
 		<div className="flex flex-wrap justify-center mt-10 bg-gradient-to-b from-darkest to-light bg-fixed">
+			{showConfetti && <Confetti />}
 			<div className="w-4/5">
 				<h1 className="text-xl mt-10 pt-5 text-center">
 					With an NFT ticket, take a space-bound balloon, Space Llamas are going to the moon! For just 0.1
