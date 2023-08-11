@@ -15,7 +15,7 @@ interface NFTsProps {
 	setShowConfetti: (show: boolean) => void;
 }
 
-const NFTs: React.FC<{ message: string }> = ({ message, showConfetti, setShowConfetti }) => {
+const NFTs: React.FC<NFTsProps> = ({ message, showConfetti, setShowConfetti }) => {
 	const [nftMetadata, setNftMetadata] = useState<string[]>([]);
 
 	useEffect(() => {
