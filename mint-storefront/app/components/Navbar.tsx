@@ -27,7 +27,7 @@ interface NavbarProps {
 	setShowConfetti: (showConfetti: boolean) => void;
 }
 
-export const Navbar = ({ setMessage, setShowConfetti }) => {
+export const Navbar: React.FC<NavbarProps> = ({ setMessage, setShowConfetti }) => {
 	return (
 		<header className="w-full fixed top-0 z-50 bg-normal text-text shadow-xl">
 			<nav className="container mx-auto">
@@ -37,7 +37,7 @@ export const Navbar = ({ setMessage, setShowConfetti }) => {
 						<div className="mr-2">
 							<ClientSideWalletMultiButton /> {/* Using the wrapper here */}
 						</div>
-						<MintButton setMessage={setMessage} />
+						<MintButton setMessage={setMessage} setShowConfetti={setShowConfetti} />
 					</div>
 				</div>
 			</nav>
